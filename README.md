@@ -3,7 +3,7 @@
 This project is a simple YouTube-like application I built to learn more about **Google Cloud Platform**. It’s a hands-on way for me to explore how GCP services work together in a real-world app.
 
 ## Requirements
-The scope of the project would be the fulfill the following functional requirements:
+The scope of the project would be to fulfill the following functional requirements:
 1. Users can sign in/out using their Google account.
 2. Authenticated users can upload videos.
 3. Videos are transcoded into multiple formats (e.g., 360p, 720p).
