@@ -2,7 +2,7 @@ import express from "express";
 import ffmpeg from "fluent-ffmpeg";
 import { path as ffmpegPath } from "@ffmpeg-installer/ffmpeg";
 
-// Set FFmpeg path dynamically using @ffmpeg-installer/ffmpeg
+// Set FFmpeg path dynamically 
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 const app = express(); 
@@ -28,7 +28,6 @@ app.post("/process-video", (req, res) => {
             res.status(500).send(`Interval Server Error: ${err.message}`);
         })
         .save(outputFilePath)
-    
 });
 
 const port = process.env.PORT || 3000;
