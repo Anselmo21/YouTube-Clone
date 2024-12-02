@@ -28,7 +28,8 @@ app.post('/process-video', async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    return res.status(400).send('Bad Request: missing filename.');
+    res.status(400).send('Bad Request: missing filename.'); // Removed 'return'
+    return; // Optional: Use 'return;' to exit the function after sending the response
   }
 
   const inputFileName = data.name;
@@ -45,7 +46,8 @@ app.post('/process-video', async (req, res) => {
       deleteRawVideo(inputFileName),
       deleteProcessedVideo(outputFileName)
     ]);
-    return res.status(500).send('Processing failed');
+    res.status(500).send('Processing failed'); // Removed 'return'
+    return; // Optional
   }
   
   // Upload the processed video to Cloud Storage
@@ -56,7 +58,7 @@ app.post('/process-video', async (req, res) => {
     deleteProcessedVideo(outputFileName)
   ]);
 
-  return res.status(200).send('Processing finished successfully');
+  res.status(200).send('Processing finished successfully'); // Removed 'return'
 });
 
 const port = process.env.PORT || 3000;
