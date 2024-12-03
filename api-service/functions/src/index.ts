@@ -63,6 +63,8 @@ export const generateUploadUrl = onCall({maxInstances: 1}, async (request) => {
   return {url, fileName};
 });
 
+// TODO: customize this to suit user needs based on subscriptions/activity
+// Testable via POST request using the url from cloud run
 export const getVideos = onCall({maxInstances: 1}, async () => {
   const snapshot =
     await firestore.collection(videoCollectionId).limit(10).get();
