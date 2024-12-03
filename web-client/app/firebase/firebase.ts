@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, User } from "firebase/auth";
 
+import { getFunctions } from "firebase/functions";
+
+
 
 // Web app's Firebase configuration
 const firebaseConfig = {
@@ -15,7 +18,7 @@ const app = initializeApp(firebaseConfig);
 
 // auth object for a sign up
 const auth = getAuth(app);
-
+export const functions = getFunctions(app);
 /**
  * Signs the user in with a Google popup.
  * @returns A promise that resolves with the user's credentials.
