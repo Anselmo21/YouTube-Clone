@@ -2,12 +2,13 @@
 
 import SignIn from "./signIn";
 import Link from "next/link";
+import Image from 'next/image'; // Import Image component
 
 import styles from "./navbar.module.css";
+import Upload from "./upload";
 import { useEffect, useState } from "react";
 import { onAuthStateChangedHelper } from "../firebase/firebase";
 import { User } from "firebase/auth";
-
 
 function NavBar() {
   // Initialize user state
@@ -20,16 +21,19 @@ function NavBar() {
 
     // Cleanup subscription on unmount
     return () => unsubscribe();
-  }, [] /* No dependencies, never rerun */);
-
+  }, []);
 
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <span className={styles.logoContainer}>
-          <img className={styles.logo} src="/youtube-logo.svg" alt="YouTube Logo" />
-        </span>
+        <Image
+          width={90}
+          height={20}
+          src="/youtube-logo.svg"
+          alt="YouTube Logo"
+        />
       </Link>
+      {user && <Upload />}
       <SignIn user={user} />
     </nav>
   );
