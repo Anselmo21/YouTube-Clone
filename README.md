@@ -1,6 +1,6 @@
 # YouTube Clone
 
-This project is a simple YouTube-like application I built to learn more about **Google Cloud Platform**. It’s a hands-on way for me to explore how GCP services work together in a real-world app.
+This project is a simple YouTube-like application I built to learn more about **Google Cloud Platform**.
 
 ## Requirements
 The scope of the project would be to fulfill the following functional requirements:
